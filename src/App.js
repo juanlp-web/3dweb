@@ -8,9 +8,9 @@ import { Flex, Box} from '@react-three/flex'
 //import './styles.css'
 
 function Duck() {
-  const gltf = useLoader(GLTFLoader, "Bee.glb")
-  return <primitive object={gltf.scene}       position={[-0, -10, -20]}
-  rotation={[0, 5, 0]} args={[1, 16, 16]}/>
+  const gltf = useLoader(GLTFLoader, "Beagle.glb")
+  return <primitive object={gltf.scene}     height={100}   position={[-0.0100, -0, 4.7]}
+  rotation={[0, -7, 0]} args={[1, 16, 16]}/>
 }
 
 function Loading() {
@@ -29,26 +29,7 @@ function Loading() {
   );
 }
 
-function ArWing() {
-  const group = useRef();
-  const { nodes } = useLoader(GLTFLoader, "Bee.glb");
-  console.log(nodes)
-  useFrame(() => {
-    group.current.rotation.y += 0.004;
-  });
-  return (
-    <group ref={group}>
-      <mesh visible >
-        <meshStandardMaterial
-          attach="material"
-          color="white"
-          roughness={0.3}
-          metalness={0.3}
-        />
-      </mesh>
-    </group>
-  );
-}
+
 
 export default function App() {
   return (
